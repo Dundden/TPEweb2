@@ -12,7 +12,7 @@ Este proyecto consiste en una base de datos para una biblioteca pública. El obj
 
 A continuación se muestra el diagrama del modelo de datos para la base de datos de la biblioteca pública.
 
-![diagrama](https://github.com/user-attachments/assets/16131cee-6db0-4dd3-8707-87851e734823)
+![Diagrama](https://github.com/user-attachments/assets/1d5c3313-02df-410f-b82f-3b8e3d656770)
 
 ## Explicación del Dominio
 
