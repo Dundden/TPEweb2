@@ -12,7 +12,7 @@ Este proyecto consiste en una base de datos para una biblioteca pública. El obj
 
 A continuación se muestra el diagrama del modelo de datos para la base de datos de la biblioteca pública.
 
-![Diagrama](https://github.com/user-attachments/assets/1d5c3313-02df-410f-b82f-3b8e3d656770)
+![Diagrama2](https://github.com/user-attachments/assets/ced1dfd9-6a41-4f02-95c4-24ff0da47c76)
 
 ## Explicación del Dominio
 
@@ -23,5 +23,22 @@ El modelo de datos para la biblioteca pública incluye las siguientes entidades 
 3) Libros: Se almacena los datos relacionados al titulo,  autor, fecha de publicacion, editorial, genero y cantidad de copias disponibles.  
 
 
-![Diagrama2](https://github.com/user-attachments/assets/ced1dfd9-6a41-4f02-95c4-24ff0da47c76)
+## Desplegar Sitio WEB 
+
+Listo aqui los pasos a seguir para poder desplegar el sitio web:
+
+1) Instalar XAMPP en la computadora local junto con PhpMyAdmin. 
+2) Encender Apache y MySQL para utilizar la misma como servidor local.
+3) Crear una base de datos en PhpMyAdmin. 
+4) Importar desde la base de datos creadas, el archivo biblioteca.sql.
+5) Navegar por la pagina WEB. 
+
+## Informacion de Administrador
+
+Para poder loguearse como administrador es necesario contar con la siguiente informacion:
+
+1) Usuario: web2admin@gmail.com.
+2) Password: 123456.
+
+
 
