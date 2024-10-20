@@ -23,4 +23,5 @@ El modelo de datos para la biblioteca pública incluye las siguientes entidades 
 3) Libros: Se almacena los datos relacionados al titulo,  autor, fecha de publicacion, editorial, genero y cantidad de copias disponibles.  
 
 
+![Diagrama2](https://github.com/user-attachments/assets/ced1dfd9-6a41-4f02-95c4-24ff0da47c76)
 
