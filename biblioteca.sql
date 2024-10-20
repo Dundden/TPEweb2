@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2024 a las 17:29:05
+-- Tiempo de generación: 20-10-2024 a las 02:10:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `biblioteca`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `administrador`
+--
+
+CREATE TABLE `administrador` (
+  `id_administrador` int(11) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `password` char(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`id_administrador`, `email`, `password`) VALUES
+(1, 'web2admin@gmail.com', '$2y$10$pXJxwAD1f9HoSQCHPJCi7ezyQ718zzrP3OQBQZl2HN/mo4p85gxUm');
 
 -- --------------------------------------------------------
 
@@ -42,11 +61,11 @@ CREATE TABLE `libros` (
 --
 
 INSERT INTO `libros` (`id_libro`, `titulo`, `autor`, `fecha_publicacion`, `editorial`, `genero`, `cantidad_copias`) VALUES
-(1, 'Harry Potter y La Piedra Filosofal', 'J.K Rowling', '1997-06-26', 'Salamanca', 'Fantasia', 10),
-(2, 'El Resplandor', 'Stephen King', '1977-01-28', 'Debolsillo', 'Terror', 7),
-(3, 'El Caso Alaska Sanders', 'Joël Dicker', '2022-03-10', 'Alfaguara', 'Policial', 4),
-(4, 'Dune', 'Frank Herbert', '1965-08-01', 'Debolsillo', 'Ciencia Ficcion', 8),
-(5, 'La Llamada de Cthulhu', 'H. P. Lovecraft', '1928-02-01', 'Del Fondo', 'Terror', 6);
+(1, 'Libro 1', 'Autor 1', '2024-10-19', 'Editorial 1', 'Genero 1', 10),
+(2, 'Libro 2', 'Autor 2', '2024-10-19', 'Editorial 2', 'Genero 2', 5),
+(3, 'Libro 3', 'Autor 3', '2024-10-19', 'Editorial 3', 'Genero 3', 7),
+(4, 'Libro 4', 'Autor 4', '2024-10-19', 'Editorial 4', 'Genero 4', 18),
+(5, 'Libro 5', 'Autor 5', '2024-10-19', 'Editorial 5', 'Genero 5', 15);
 
 -- --------------------------------------------------------
 
@@ -67,11 +86,11 @@ CREATE TABLE `prestamo` (
 --
 
 INSERT INTO `prestamo` (`id_prestamo`, `id_usuario`, `id_libro`, `fecha_prestamo`, `fecha_devolucion`) VALUES
-(6, 5, 4, '2024-09-15', '2024-09-30'),
-(7, 3, 1, '2024-09-15', '2024-09-30'),
-(8, 2, 3, '2024-09-15', '2024-09-30'),
-(9, 1, 5, '2024-09-15', '2024-09-30'),
-(10, 4, 2, '2024-09-15', '2024-09-30');
+(1, 1, 5, '2024-10-19', '2024-11-19'),
+(2, 2, 4, '2024-10-19', '2024-11-19'),
+(3, 3, 3, '2024-10-19', '2024-11-19'),
+(4, 4, 2, '2024-10-19', '2024-11-19'),
+(5, 5, 5, '2024-10-19', '2024-11-19');
 
 -- --------------------------------------------------------
 
@@ -94,15 +113,22 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `direccion`, `mail`, `telefono`, `fecha_registro`) VALUES
-(1, 'Juan Manuel', 'Grandio', '14 de Julio 279', 'grandiojm@gmail.com', '2494669433', '2024-09-15'),
-(2, 'Aaron Gabriel', 'Ciancio', 'Berutti 1556', 'aaronciancio321@gmail.com', '2284245140', '2024-09-15'),
-(3, 'Federico', 'Alcorta', 'General Rodriguez 7840', 'fedealcorta@gmail.com', '1142998471', '2024-09-15'),
-(4, 'Florencia', 'Altamirano', 'Hoyos 570', 'faltamirano@gmail.com', '1156890152', '2024-09-15'),
-(5, 'Lucila', 'Torres', 'Salta 1570', 'lucilatorres@gmail.com', '2494669873', '2024-09-15');
+(1, 'Nombre 1', 'Apellido 1', 'Direccion 1', 'Mail 1', 'Telefono 1', '2024-10-19'),
+(2, 'Nombre 2 ', 'Apellido 2', 'Direccion 2', 'Mail 2', 'Telefono 2', '2024-10-19'),
+(3, 'Nombre 3 ', 'Apellido 3', 'Direccion 3', 'Mail 3', 'Telefono 3', '2024-10-19'),
+(4, 'Nombre 4', 'Apellido 4', 'Direccion 4 ', 'Mail 4', 'Telefono 4', '2024-10-19'),
+(5, 'Nombre 5', 'Apellido 5', 'Direccion 5', 'Mail 5', 'Telefono 5', '2024-10-19');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `administrador`
+--
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`id_administrador`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indices de la tabla `libros`
@@ -132,13 +158,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamo`
 --
 ALTER TABLE `prestamo`
-  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_prestamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
